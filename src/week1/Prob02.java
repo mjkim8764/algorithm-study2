@@ -1,5 +1,10 @@
 package week1;
 
+/*
+    week1.Prob02 :  다리를 지나는 트럭
+    url : https://programmers.co.kr/learn/courses/30/lessons/42583
+ */
+
 import java.util.LinkedList;
 import java.util.Queue;
 
