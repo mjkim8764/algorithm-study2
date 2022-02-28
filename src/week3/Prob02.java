@@ -30,6 +30,7 @@ public class Prob02 {
         }
     }
 
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -57,7 +58,6 @@ public class Prob02 {
         // 1부터 dfs
         dfs(1, graph, visited);
 
-        
         // 방문한 노드(바이러스에 걸린 컴퓨터) 갯수 확인
         int count = 0;
         for(int i=1; i<=V; i++) {
