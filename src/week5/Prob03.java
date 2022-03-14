@@ -1,7 +1,7 @@
 package week5;
 
 /*
-    Week5.Prob02 : 완주하지 못한 선수
+    Week5.Prob03 : 전화번호 목록
     url : https://programmers.co.kr/learn/courses/30/lessons/42577
 */
 
