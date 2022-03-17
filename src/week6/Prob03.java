@@ -9,10 +9,7 @@ public class Prob03 {
 
     // 균형잡힌 문자열이 올바른 문자열인지 체크
     public static boolean isCorrect(String s) {
-        if(s.charAt(0) == ')')
-            return false;
-
-        return true;
+        return s.charAt(0) == '(';
     }
 
     // 균형잡힌 문자열이 처음 완성되는 index를 반환
@@ -44,29 +41,27 @@ public class Prob03 {
         return convertString;
     }
 
-    public static String split(String s) {
+    public static String toCorrect(String p) {
 
         // 빈 문자열일 때는 반환
-        if(s.length() == 0)
-            return s;
+        if(p.length() == 0)
+            return p;
 
         // u가 올바른 문자열인지 체크 후 프로세스 분기
-        if (isCorrect(s.substring(0, getFirstIndexOfBalanced(s)))){
+        if (isCorrect(p.substring(0, getFirstIndexOfBalanced(p)))){
             // 올바른 문자열일 때는 3 수행
-            s = s.substring(0, getFirstIndexOfBalanced(s)) + split(s.substring(getFirstIndexOfBalanced(s)));
+            p = p.substring(0, getFirstIndexOfBalanced(p)) + toCorrect(p.substring(getFirstIndexOfBalanced(p)));
         }
         else {
             // 올바른 문자열이 아닐 때는 4 수행
-            s = "(" + split(s.substring(getFirstIndexOfBalanced(s))) + ")" + convert(s.substring(1, getFirstIndexOfBalanced(s) - 1));
+            p = "(" + toCorrect(p.substring(getFirstIndexOfBalanced(p))) + ")" + convert(p.substring(1, getFirstIndexOfBalanced(p) - 1));
         }
 
-        return s;
+        return p;
     }
 
     public static void solution(String p) {
-        String answer = "";
-        answer = answer + split(p);
-        System.out.println(answer);
+        System.out.println(toCorrect(p));
     }
 
     public static void main(String[] args) {
