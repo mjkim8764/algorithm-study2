@@ -78,7 +78,7 @@ public class Delivery {
             for (Edge edge : graph[currentNode]) {
 
                 // Edge를 거쳐 가는 것이 시간이 더 적게 걸린다면 갱신 후 edge를 큐에 add
-                if (minTime[edge.nextNode] >= minTime[currentNode] + edge.time) {
+                if (minTime[edge.nextNode] > minTime[currentNode] + edge.time) {
                     minTime[edge.nextNode] = minTime[currentNode] + edge.time;
                     pQueue.add(edge);
                 }
