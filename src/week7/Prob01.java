@@ -32,7 +32,7 @@ public class Prob01 {
         total[1] = score[1];
         step[1] = 1;
 
-        // N == 1 일 때, ArrayIndexException 발생 방지
+        // N == 1 일 때, ArraycountException 발생 방지
         if(N >= 2) {
             total[2] = score[1] + score[2];
             step[2] = 2;

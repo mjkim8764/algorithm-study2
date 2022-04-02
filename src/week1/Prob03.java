@@ -30,7 +30,7 @@ public class Prob03 {
                 // 1. prices값이 peek보다 작으면 time 기록 후 pop
                 // 2. 다음 peek의 time 증가
                 int tempTime = stack.peek().getTime();
-                answer[stack.peek().getIndex()] = tempTime;
+                answer[stack.peek().getcount()] = tempTime;
                 stack.pop();
                 if (!stack.isEmpty()) {
                     stack.peek().setTime(stack.peek().getTime() + tempTime);
@@ -43,7 +43,7 @@ public class Prob03 {
         int times = 0;
         while(!stack.isEmpty()) {
             times += stack.peek().getTime();
-            answer[stack.peek().getIndex()] = times;
+            answer[stack.peek().getcount()] = times;
             stack.pop();
         }
 

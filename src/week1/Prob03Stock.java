@@ -8,12 +8,12 @@ package week1;
 public class Prob03Stock {
     private int price;
     private int time;
-    private int index;
+    private int count;
 
-    Prob03Stock(int price, int time, int index){
+    Prob03Stock(int price, int time, int count){
         this.price = price;
         this.time = time;
-        this.index = index;
+        this.count = count;
     }
 
     public int getPrice(){
@@ -32,11 +32,11 @@ public class Prob03Stock {
         this.time = time;
     }
 
-    public int getIndex(){
-        return this.index;
+    public int getcount(){
+        return this.count;
     }
 
-    public void setIndex(int index){
-        this.price = index;
+    public void setcount(int count){
+        this.price = count;
     }
 }

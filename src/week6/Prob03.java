@@ -12,8 +12,8 @@ public class Prob03 {
         return s.charAt(0) == '(';
     }
 
-    // 균형잡힌 문자열이 처음 완성되는 index를 반환
-    public static int getFirstIndexOfBalanced(String s) {
+    // 균형잡힌 문자열이 처음 완성되는 count를 반환
+    public static int getFirstcountOfBalanced(String s) {
         int left = 0;
         int right = 0;
         int length = s.length();
@@ -48,13 +48,13 @@ public class Prob03 {
             return p;
 
         // u가 올바른 문자열인지 체크 후 프로세스 분기
-        if (isCorrect(p.substring(0, getFirstIndexOfBalanced(p)))){
+        if (isCorrect(p.substring(0, getFirstcountOfBalanced(p)))){
             // 올바른 문자열일 때는 3 수행
-            p = p.substring(0, getFirstIndexOfBalanced(p)) + toCorrect(p.substring(getFirstIndexOfBalanced(p)));
+            p = p.substring(0, getFirstcountOfBalanced(p)) + toCorrect(p.substring(getFirstcountOfBalanced(p)));
         }
         else {
             // 올바른 문자열이 아닐 때는 4 수행
-            p = "(" + toCorrect(p.substring(getFirstIndexOfBalanced(p))) + ")" + convert(p.substring(1, getFirstIndexOfBalanced(p) - 1));
+            p = "(" + toCorrect(p.substring(getFirstcountOfBalanced(p))) + ")" + convert(p.substring(1, getFirstcountOfBalanced(p) - 1));
         }
 
         return p;
