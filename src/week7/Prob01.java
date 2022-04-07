@@ -10,52 +10,33 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Prob01 {
-    /*
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        // score : 입력값,   total : 점화식을 수행할 총 점수,  step : 계단을 얼마나 연속하여 밟았는지
-        int[] score = new int[N + 1];
-        int[] total = new int[N + 1];
-        int[] step = new int[N + 1];
+        int[] score = new int[N];
+        int[] total = new int[N];
 
-
-        for(int i=1; i<=N; i++) {
+        for(int i=0; i<N; i++) {
             score[i] = Integer.parseInt(br.readLine());
         }
 
         br.close();
 
         // 점화식의 초기값
-        total[1] = score[1];
-        step[1] = 1;
+        total[0] = score[0];
 
-        // N == 1 일 때, ArraycountException 발생 방지
-        if(N >= 2) {
-            total[2] = score[1] + score[2];
-            step[2] = 2;
-        }
+        if(N >= 2)
+            total[1] = score[0] + score[1];
 
-        for(int i = 3; i <= N; i++) {
-            int twoAndOne = total[i - 3] + score[i - 1] + score[i];
-            int oneAndTwo = total[i - 3] + score[i - 2] + score[i];
+        if(N >= 3)
+            total[2] = Math.max(score[0], score[1]) + score[2];
 
-            if( (twoAndOne > oneAndTwo) || (step[i - 3] == 2)){
-                total[i] = twoAndOne;
-                step[i] = 2;
-            }
-            else {
-                total[i] = oneAndTwo;
-                step[i] = 1;
-            }
-        }
+        for(int i = 3; i < N; i++)
+            total[i] = Math.max(total[i - 3] + score[i - 1] + score[i], total[i - 2] + score[i]);
 
-        System.out.println(total[N]);
+        System.out.println(total[N - 1]);
     }
-
-
-     */
 
 }
