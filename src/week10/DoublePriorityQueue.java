@@ -1,5 +1,10 @@
 package week10;
 
+/*
+    Week10.03 : 이중우선순위큐
+    url : https://programmers.co.kr/learn/courses/30/lessons/42628
+*/
+
 import java.util.Collections;
 import java.util.PriorityQueue;
 
