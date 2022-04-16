@@ -1,7 +1,7 @@
 package week10;
 
 /*
-    Week10.04 : 더 맵게
+    Week10.04 : 디스크 컨트롤러
     url : https://programmers.co.kr/learn/courses/30/lessons/42627
 */
 
